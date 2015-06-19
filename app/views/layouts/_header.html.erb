@@ -29,8 +29,12 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="<%= new_user_registration_path %>" class="btn btn-success btn-xs">Apply Now</a></li>
-          <li><a href="#">Login</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><a href="<%= new_user_registration_path %>" class="btn btn-success btn-xs">Apply Now</a></li>
+            <li><a href="#">Login</a></li>
+          <% end %>
         </ul>
       </div>
     </div>
