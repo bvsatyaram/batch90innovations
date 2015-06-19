@@ -46,6 +46,7 @@ end
 group :development do
   gem 'guard'
   gem 'guard-livereload', require: false
+  gem "letter_opener"
 end
 
 group :production do
