@@ -8,7 +8,7 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-<div id="content_wrapper">
+<section id="content_wrapper">
   <div class="container">
     <div class="flash_messages">
       <%= flash_tag(notice, "notice") %>
@@ -16,8 +16,7 @@
     </div>
     <%= yield %>
   </div>
-</div>
-<%= yield %>
+</section>
 <%= render 'layouts/footer' %>
 </body>
 </html>
