@@ -8,6 +8,15 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
+<div id="content_wrapper">
+  <div class="container">
+    <div class="flash_messages">
+      <%= flash_tag(notice, "notice") %>
+      <%= flash_tag(alert, "alert") %>
+    </div>
+    <%= yield %>
+  </div>
+</div>
 <%= yield %>
 <%= render 'layouts/footer' %>
 </body>
