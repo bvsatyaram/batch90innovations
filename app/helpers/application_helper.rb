@@ -14,7 +14,7 @@ module ApplicationHelper
   def flash_tag(msg, msg_type)
     return unless msg.present?
     if msg_type == "notice"
-      msg_type = "info"
+      msg_type = "success"
     elsif msg_type == "alert"
       msg_type = "danger"
     end
