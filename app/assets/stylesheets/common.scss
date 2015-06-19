@@ -1,0 +1,35 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 65px;
+  box-sizing: border-box;
+}
+
+header {
+  nav {
+    ul.nav {
+      li {
+        a.btn {
+          background-color: $primary-color;
+          border-color: $primary-color;
+          margin-top: 5px;
+          transition: background-color 0.3s ease-in;
+
+          &:hover {
+            background-color: $primary-color-darkened;
+            border-color: $primary-color-darkened;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 25px 0;
+}

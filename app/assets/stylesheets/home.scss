@@ -1,3 +1,16 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#land {
+  a#apply-now {
+    width: 15em;
+    max-width: 100%;
+    display: block;
+    margin: 2em auto 0;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: $primary-color-darkened;
+      border-color: $primary-color-darkened;
+    }
+  }
+}
