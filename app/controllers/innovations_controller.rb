@@ -4,7 +4,13 @@ class InnovationsController < ApplicationController
   def update
     @innovation = current_user.innovation
     @innovation.update_attributes(innovation_params)
-    redirect_to apply_path, notice: "Application form saved scuccessfully"
+    if params[:innovation][:final_submit] == true.to_s
+      @innovation.submit!
+      flash[:notice] = "Application submitted successfully"
+    else
+      flash[:notice] = "Application saved successfully"
+    end
+    redirect_to apply_path
   end
 
 private

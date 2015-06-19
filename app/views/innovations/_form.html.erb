@@ -1,8 +1,49 @@
+<% agreement_text = "I read all the rules, terms and conditions" %>
+
 <%= simple_form_for innovation, html: {id: "application-form"} do |f| %>
   <%= f.input :applicant_name %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :agree_terms, as: :boolean, label: "I read all the rules, terms and conditions" %>
-  <%= f.submit "Save as Draft", class: "draft btn btn-lg btn-primary" %>
-  <%= f.submit "Submit Application", class: "btn btn-lg btn-success" %>
+  <%= f.input :final_submit, as: :hidden, input_html: { id: "final-submit-tracker" } %>
+  <%= f.input :agree_terms, as: :boolean, label: agreement_text, input_html: {id: "application_agree_terms"} %>
+  <%= link_to "Save as Draft", "#", id: "save-draft", class: "btn btn-lg btn-primary" %>
+  <%= link_to "Submit Application", "#", id: "submit-application", class: "btn btn-lg btn-success" %>
 <% end %>
+
+<!-- Modal -->
+<div class="modal fade" id="read-agreement-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Please Read Rules</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please check the "<%= agreement_text %>" box and then submit.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirm-submission-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Final Submission</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to submit your application?</p>
+        <p>You can't edit the application form once submitted. If you are not yet sure of submission, you could try "Save as Draft"</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" id="final-confirm-submission" class="btn btn-success">Yes, Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

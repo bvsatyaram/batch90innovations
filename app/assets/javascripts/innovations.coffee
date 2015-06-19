@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('#save-draft').click ->
+    $('.flash_messages').remove()
+    $('#application-form').submit()
+    false
+
+  $('#submit-application').click ->
+    $('.flash_messages').remove()
+    if $('#application_agree_terms')[0].checked
+      $('#confirm-submission-modal').modal('show')
+    else
+      $('#read-agreement-modal').modal('show')
+    false
+
+  $('#final-confirm-submission').click ->
+    $('#final-submit-tracker').val(true)
+    $('#application-form').submit()

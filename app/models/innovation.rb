@@ -20,4 +20,8 @@ class Innovation < ActiveRecord::Base
   def submitted?
     self.submitted_at.present?
   end
+
+  def submit!
+    update_attribute(:submitted_at, Time.now)
+  end
 end
