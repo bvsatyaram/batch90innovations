@@ -1,0 +1,10 @@
+<h1>Submitted Applications</h1>
+<% if @innovations.any? %>
+  <% @innovations.each do |innovation| %>
+    <%= render partial: 'innovations/details', locals: {innovation: innovation, users: @users} %>
+  <% end %>
+<% else %>
+  <div class="well">
+    No innovations submitted yet. Please checkback later.
+  </div>
+<% end %>

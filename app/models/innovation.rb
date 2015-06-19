@@ -15,6 +15,8 @@
 class Innovation < ActiveRecord::Base
   belongs_to :user
 
+  scope :submitted, -> { where.not(submitted_at: nil) }
+
   attr_accessor :final_submit, :agree_terms
 
   def submitted?

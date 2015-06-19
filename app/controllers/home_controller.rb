@@ -2,7 +2,15 @@ class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:land, :login]
 
   def land
-    redirect_to apply_path if user_signed_in?
+    if user_signed_in?
+      if current_user.admin?
+        redirect_to admin_path
+      elsif current_user.judge?
+        redirect_to judge_path
+      else
+        redirect_to apply_path 
+      end
+    end
   end
 
   def apply
@@ -12,5 +20,14 @@ class HomeController < ApplicationController
   end
 
   def login
+  end
+
+  def admin
+    @innovations = Innovation.all
+    @users = User.where(id: @innovations.pluck(:user_id)).group_by(&:id)
+  end
+
+  def judge
+    @innovations = Innovation.submitted
   end
 end
