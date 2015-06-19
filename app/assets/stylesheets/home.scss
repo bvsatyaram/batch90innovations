@@ -14,3 +14,15 @@
     }
   }
 }
+
+#apply {
+  form#application-form {
+    .btn {
+      width: 14em;
+
+      &.draft {
+        margin-right: 1em;
+      }
+    }
+  }
+}

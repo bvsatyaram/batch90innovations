@@ -1,0 +1,12 @@
+<div id="application-preview">
+  <dl>
+    <dt>Applicant's Name</dt>
+    <dd><%= @innovation.applicant_name %></dd>
+    <dt>Project Title</dt>
+    <dd><%= @innovation.title %></dd>
+    <dt>Project Description</dt>
+    <dd><%= @innovation.description %></dd>
+    <dt>Submitted At</dt>
+    <dd><%= innovation_submission_date(@innovation) %></dd>
+  </dl>
+</div>

@@ -1,0 +1,9 @@
+<section id="apply">
+  <% if @innovation.submitted? %>
+    <h1>Application Summary</h1>
+    <%= render partial: 'innovations/preview', locals: {innovation: @innovation} %>
+  <% else %>
+    <h1>Apply for Batch 90 Innovations</h1>
+    <%= render partial: 'innovations/form', locals: {innovation: @innovation} %>
+  <% end %>
+</section>

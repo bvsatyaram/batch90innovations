@@ -1,0 +1,8 @@
+<%= simple_form_for innovation, html: {id: "application-form"} do |f| %>
+  <%= f.input :applicant_name %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :agree_terms, as: :boolean, label: "I read all the rules, terms and conditions" %>
+  <%= f.submit "Save as Draft", class: "draft btn btn-lg btn-primary" %>
+  <%= f.submit "Submit Application", class: "btn btn-lg btn-success" %>
+<% end %>
