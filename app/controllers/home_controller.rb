@@ -23,11 +23,13 @@ class HomeController < ApplicationController
   end
 
   def admin
+    deny_access! unless current_user.admin?
     @innovations = Innovation.all
     @users = User.where(id: @innovations.pluck(:user_id)).group_by(&:id)
   end
 
   def judge
+    deny_access! unless current_user.judge?
     @innovations = Innovation.submitted
   end
 end
