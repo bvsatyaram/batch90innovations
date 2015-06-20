@@ -29,5 +29,9 @@ class User < ActiveRecord::Base
 
   has_one :innovation
 
-  after_create :create_innovation
+  after_create :create_innovation, if: :applicant?
+
+  def applicant?
+    !(admin? || judge?)
+  end
 end
