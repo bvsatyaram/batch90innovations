@@ -1,4 +1,56 @@
 #land {
+  background-color: #e74c3c;
+  color: #FFFFFF;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+
+  #brand-name {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 20vh;
+
+    .fa {
+      display: block;
+      float: left;
+      font-size: 4vw;
+      line-height: 5vw;
+    }
+
+
+    .brand-content {
+      margin-left: 5vw;
+
+      h1 {
+        margin: 0 0;
+        font-size: 4vw;
+        line-height: 4vw;
+        font-weight: 700;
+      }
+    }
+  }
+
+  article.quote {
+    .fa {
+      font-size: 6vw;
+    }
+
+    .blockquote {
+      font-weight: 300;
+      text-align: right;
+
+      .text {
+        font-size: 3vw;
+      }
+
+      .author {
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+#challenge {
   a#apply-now {
     width: 15em;
     max-width: 100%;

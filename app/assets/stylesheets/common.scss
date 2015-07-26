@@ -1,7 +1,6 @@
 body {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 65px;
   box-sizing: border-box;
 }
 
@@ -25,11 +24,23 @@ header {
   }
 }
 
+#content_wrapper {
+  padding-top: 70px;
+  padding-bottom: 65px;
+}
+
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
   padding: 25px 0;
+}
+
+.vcenter {
+  border: 1px solid transparent;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

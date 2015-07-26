@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, except: [:land, :login]
+  before_action :authenticate_user!,
+    except: [:land, :login, :challenge, :judging_criteria, :application_process, :team, :faq]
 
   def land
     if user_signed_in?
@@ -10,7 +11,29 @@ class HomeController < ApplicationController
       else
         redirect_to apply_path 
       end
+    else
+      render layout: "land"
     end
+  end
+
+  def challenge
+    
+  end
+
+  def judging_criteria
+    
+  end
+
+  def application_process
+    
+  end
+
+  def team
+    
+  end
+
+  def faq
+    
   end
 
   def apply

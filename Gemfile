@@ -56,6 +56,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
+gem "font-awesome-rails"
 gem 'devise'
 gem 'annotate'
 gem 'simple_form'

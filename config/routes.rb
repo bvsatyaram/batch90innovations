@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get 'challenge' => 'home#challenge', as: :challenge
+  get 'judging_criteria' => 'home#judging_criteria', as: :judging_criteria
+  get 'application_process' => 'home#application_process', as: :application_process
+  get 'team' => 'home#team', as: :team
+  get 'faq' => 'home#faq', as: :faq
   get 'login' => 'home#login', as: :login
   get 'apply' => 'home#apply', as: :apply
   get 'admin' => 'home#admin', as: :admin
