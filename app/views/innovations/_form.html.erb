@@ -2,9 +2,9 @@
 
 <%= simple_form_for innovation, html: {id: "application-form"} do |f| %>
   <%= f.input :project_name, label: "Project Name" %>
-  <%= f.input :problem, label: "Explain the problem/clinical need  (150 words)" %>
-  <%= f.input :solution, label: "Explain your solution (500 words)" %>
-  <%= f.input :summary, label: "Summary (1000 words summary-this is your space to highlight key aspects of your project. Read the application notes below to summarize and give your project the best chance to win.)" %>
+  <%= f.input :problem, label: "Explain the problem/clinical need  (150 words)", input_html: {id: "problem-input"} %>
+  <%= f.input :solution, label: "Explain your solution (500 words)", input_html: {id: "solution-input"} %>
+  <%= f.input :summary, label: "Summary (1000 words summary-this is your space to highlight key aspects of your project. Read the application notes below to summarize and give your project the best chance to win.)", input_html: {id: "summary-input"} %>
   <%= f.input :final_submit, as: :hidden, input_html: { id: "final-submit-tracker" } %>
   <%= f.input :agree_terms, as: :boolean, label: agreement_text, input_html: {id: "application_agree_terms"} %>
   <%= link_to "Save as Draft", "#", id: "save-draft", class: "btn btn-lg btn-primary" %>

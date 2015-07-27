@@ -1,0 +1,22 @@
+#apply {
+  form {
+    label {
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+
+    textarea {
+      &#problem-input {
+        height: 6em;
+      }
+
+      &#solution-input {
+        height: 12em;
+      }
+
+      &#summary-input {
+        height: 18em;
+      }
+    }
+  }
+}

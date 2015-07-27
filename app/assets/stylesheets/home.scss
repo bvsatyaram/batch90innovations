@@ -50,7 +50,20 @@
   }
 }
 
-#challenge {
+#the_challenge {
+  section {
+    .fa {
+      display: block;
+      float: left;
+      font-size: 3em;
+      margin-top: 5px;
+    }
+
+    .section_content {
+      padding-left: 5em;
+    }
+  }
+
   a#apply-now {
     width: 15em;
     max-width: 100%;
