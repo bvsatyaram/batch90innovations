@@ -2,14 +2,15 @@
 #
 # Table name: innovations
 #
-#  id             :integer          not null, primary key
-#  user_id        :integer
-#  applicant_name :string
-#  title          :string
-#  description    :text
-#  submitted_at   :datetime
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id           :integer          not null, primary key
+#  user_id      :integer
+#  submitted_at :datetime
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  project_name :string
+#  problem      :text
+#  solution     :text
+#  summary      :text
 #
 
 class Innovation < ActiveRecord::Base

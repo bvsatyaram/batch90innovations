@@ -1,13 +1,7 @@
 <div id="application-preview">
   <dl>
-    <dt>Applicant's Name</dt>
-    <dd><%= innovation.applicant_name %></dd>
-    <dt>Applicant's Email</dt>
-    <dd><%= users[innovation.user_id][0].email %></dd>
-    <dt>Project Title</dt>
-    <dd><%= innovation.title %></dd>
-    <dt>Project Description</dt>
-    <dd><%= innovation.description %></dd>
+    <dt>Project Name</dt>
+    <dd><%= innovation.project_name %></dd>
     <dt>Submitted At</dt>
     <dd><%= innovation_submission_date(innovation) %></dd>
   </dl>
